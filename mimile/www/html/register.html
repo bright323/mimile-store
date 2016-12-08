@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>注册</title>
 	<link rel="stylesheet" type="text/css" href="../css/public.css">
 	<link rel="stylesheet" type="text/css" href="../css/others.css">
+	<script type="text/javascript" src="../js/lib/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="../js/lib/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../js/register.js"></script>
 </head>
 <body>
 	<div id="login-header"></div>
@@ -18,16 +21,21 @@
 		</div>
 		
 		<div class="register-info">
+			<div class="bot">请输入11位的手机号</div>
 			<input type="text" placeholder="手机号码" id="register-txt" class="registers">
+			<div class="bot">6~20位字符，可由字母，数字及标点符号组成</div>
 			<input type="password" placeholder="设置密码" id="register-psw" class="register-psw">
+			<div class="bot">请输入验证码</div>
 			<div class="code-box">
-				<input type="text" placeholder="验证码" id="regis-code" class="regis-code l">
+				<input type="text" placeholder="验证码" id="regis-code" class="regis-code l par">
 				<i class="l experice-code"></i><p class="l code-blur">看不清，换一张</p>
 			</div>
+			<div class="bot">请输入短信验证码</div>
 			<div class="info-code-box">
-				<input type="text" placeholder="短信验证码" id="regis-info-code" class="regis-info-code l">
+				<input type="text" placeholder="短信验证码" id="regis-info-code" class="regis-info-code l par">
 				<div class="require-code l">获取短信验证码</div>
 			</div>
+			<div class="bot">请输入好友推荐码</div>
 			<input type="text" id="friend-recommand" class="friend-recommand" placeholder="好友推荐码（非必填）">
 			<div class="agree-box">
 				<input type="checkbox" id="agree-check" class="agree-check l"><span class="l">阅读并同意 &nbsp;</span><span class="l service">服务协议</span>

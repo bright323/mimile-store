@@ -34,6 +34,16 @@
 		<h2>我的购物车</h2>
 		<p>查看购物车商品清单，增加减少商品数量，并勾选想要的商品进行下一步操作</p>
 	</div>
+	<div class="blank-cart cart-w" style="display:none">
+			<div class="l-blank-cart l">
+				<img src="../img/blank-cart.jpg">
+			</div>
+			<div class="r-blank-cart l">
+				<h1>您的购物车还没有商品</h1>
+				<a class="l blank01" href="../a.html">马上去购物</a>
+				<a class="l blank02" href="../a.html">查看自己的订单</a>
+			</div>
+		</div>
 	<div class="add-cart cart-w">
 		<div class="cart-menu cart-w">
 			<input type="checkbox" class="cart-all-selected l" id="cart-all-selected"/>
@@ -44,15 +54,17 @@
 			<span class="l cart-alc">小计</span>
 			<span class="l">操作</span>
 		</div>
-		<div class="store-name cart-w">
+		<div class="addgoods"></div>
+		<div class="cart-goods-box cart-w" style = "display:none">
+			<div class="store-name cart-w">
 			<i class="l home-coin"></i>
 			<span class="l">花柚旗舰店&nbsp;</span>
 			<i class="l wangwang"></i>
 		</div>
-		<div class="cart-goods-infomation cart-w"></div>
-		<div class="cart-goods-box cart-w">
 			<input type="checkbox" class="cart-goods-check l" id="cart-goods-check">
-			<div class="l cart-goods-img"></div>
+			<div class="l cart-goods-img">
+				<img src=""/>
+			</div>
 			<p class="l cart-goods-details">花柚 全国鲜花速递 33枝白玫瑰花束</p>
 			<span class="l cart-goods-money">￥228.00</span>
 			<div class="l goods-sub-add">
@@ -62,16 +74,14 @@
 			</div>
 			<span class="l cart-goods-alc">￥228.00</span>
 			<p class="collect-del r">
-				<a href="#">收藏</a>
-				<a href="#">删除</a>
+				<a href="javascript:;">收藏</a>
+				<a href="javascript:;" class="cart-del">删除</a>
 			</p>
-		</div>
-		<div class="store-all-alc cart-w">
-			<span class="r store-alc">￥228.00</span>
-			<p class="r">店铺合计</p>
+
+		<div class="cart-goods-infomation cart-w"></div>
 		</div>
 		<div class="allgoods-money cart-w">
-			<p class="r">商品总价（不含运费）￥<span>228.0</span>元</p>
+			<p class="r">商品总价（不含运费）￥<span>0.00</span>元</p>
 		</div>
 	</div>
 	<div class="next-foot-box cart-w">
@@ -88,17 +98,17 @@
 			<li class="l first">
 				<dl>
 					<dt>
-						<a href="#">
-							<img src="../img/cart (2).jpg">
+						<a href="javascript:;">
+							<img/>
 						</a>
 					</dt>
 					<dd>
-						<a href="#" class="g-details">
-							【百利甜情人】只爱你 玫瑰 乳脂奶油蛋糕 1磅
-							<span>成都免费配送</span>
+						<a href="javascript:;" class="g-details">
+							<!-- 【百利甜情人】只爱你 玫瑰 乳脂奶油蛋糕 1磅 -->
+							<span></span>
 						</a>
-						<p>￥228.00</p>
-						<a href="#" class="add-to-cart">
+						<p><!-- ￥228.00 --></p>
+						<a href="javascript:;" class="add-to-cart">
 							<i></i>
 							添加到购物车
 						</a>
@@ -108,17 +118,17 @@
 			<li class="l first">
 				<dl>
 					<dt>
-						<a href="#">
+						<a href="javascript:;">
 							<img src="../img/cart (2).jpg">
 						</a>
 					</dt>
 					<dd>
-						<a href="#" class="g-details">
+						<a href="javascript:;" class="g-details">
 							【百利甜情人】只爱你 玫瑰 乳脂奶油蛋糕 1磅
 							<span>成都免费配送</span>
 						</a>
 						<p>￥228.00</p>
-						<a href="#" class="add-to-cart">
+						<a href="javascript:;" class="add-to-cart">
 							<i></i>
 							添加到购物车
 						</a>
@@ -127,17 +137,17 @@
 			</li><li class="l first">
 				<dl>
 					<dt>
-						<a href="#">
+						<a href="javascript:;">
 							<img src="../img/cart (2).jpg">
 						</a>
 					</dt>
 					<dd>
-						<a href="#" class="g-details">
+						<a href="javascript:;" class="g-details">
 							【百利甜情人】只爱你 玫瑰 乳脂奶油蛋糕 1磅
 							<span>成都免费配送</span>
 						</a>
 						<p>￥228.00</p>
-						<a href="#" class="add-to-cart">
+						<a href="javascript:;" class="add-to-cart">
 							<i></i>
 							添加到购物车
 						</a>
@@ -146,17 +156,17 @@
 			</li><li class="l first">
 				<dl>
 					<dt>
-						<a href="#">
+						<a href="javascript:;">
 							<img src="../img/cart (2).jpg">
 						</a>
 					</dt>
 					<dd>
-						<a href="#" class="g-details">
+						<a href="javascript:;" class="g-details">
 							【百利甜情人】只爱你 玫瑰 乳脂奶油蛋糕 1磅
 							<span>成都免费配送</span>
 						</a>
 						<p>￥228.00</p>
-						<a href="#" class="add-to-cart">
+						<a href="javascript:;" class="add-to-cart">
 							<i></i>
 							添加到购物车
 						</a>
@@ -165,17 +175,17 @@
 			</li><li class="l first">
 				<dl>
 					<dt>
-						<a href="#">
+						<a href="javascript:;">
 							<img src="../img/cart (2).jpg">
 						</a>
 					</dt>
 					<dd>
-						<a href="#" class="g-details">
+						<a href="javascript:;" class="g-details">
 							【百利甜情人】只爱你 玫瑰 乳脂奶油蛋糕 1磅
 							<span>成都免费配送</span>
 						</a>
 						<p>￥228.00</p>
-						<a href="#" class="add-to-cart">
+						<a href="javascript:;" class="add-to-cart">
 							<i></i>
 							添加到购物车
 						</a>

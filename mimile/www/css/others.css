@@ -204,6 +204,16 @@ body,html{
 	color: #a9a9a9;
 	text-indent: 11px;
 }
+.bot{
+	width: 100%;
+	text-indent: 25px;
+	line-height: 28px;
+	font-size: 14px;
+	color: red;
+	font-family: arial;
+	position: absolute;
+	display: none;
+}
 .registers,.friend-recommand{
 	width: 396px;
 	margin-top: 20px;
@@ -221,6 +231,9 @@ body,html{
 .register-info .regis-info-code{
 	width: 148px;
 	margin-top: 0;
+}
+.registers-info{
+	position: relative;
 }
 .experice-code{
 	margin: 8px 10px auto 20px;
@@ -329,6 +342,7 @@ body,html{
 	background-color: #f9f9f9;
 	height: 36px;
 	line-height: 36px;
+	border-right: 1px solid #ddd;
 }
 .cart-all-selected{
 	margin-top: 12px;
@@ -373,11 +387,42 @@ body,html{
 .cart-goods-infomation{
 	height: 58px;
 	background-color: #fffdee;
+	border-bottom: 1px solid #ddd;
+}
+.blank-cart{
+	height: 180px;
+	position: relative;
+	padding: 80px 0;
+}
+.l-blank-cart{
+	width: 180px;
+	height: 180px;
+	margin-left: 260px;
+}
+.r-blank-cart{
+	width: 300px;
+	height: 180px;
+}
+.r-blank-cart a{
+	display: inline-block;
+	margin-top: 30px;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	text-indent: 28px;
+	margin-left: 10px;
+}
+.blank01{
+	width: 102px;
+	background: url(../img/bg/sprite.png) no-repeat -96px -240px;
+}
+.blank02{
+	background: url(../img/bg/sprite.png) no-repeat -77px -213px;
+	width: 122px;
 }
 .cart-goods-box{
-	border-top: 1px solid #ddd;
 	border-right: 1px solid #ddd;
-	height: 58px;
+	height: 145px;
 	line-height: 58px;
 }
 .cart-goods-check{
@@ -386,18 +431,25 @@ body,html{
 .cart-goods-img{
 	width: 40px;
 	height: 40px;
-	border: 1px solid #ccc;
 	margin: 8px 18px;
+}
+.cart-goods-img img{
+	width: 40px;
+	height: 40px;
 }
 .cart-goods-details{
 	color: #333;
-	line-height: 38px;
-	margin-right: 296px;
+	width: 500px;
+	height: 59px;
+}
+.cart-goods-money{
+	width: 120px;
+	height: 59px;
 }
 .goods-sub-add{
 	width: 70px;
 	height: 26px;
-	margin: 16px 60px;
+	margin: 16px 60px auto 0;
 }
 .goods-sub-add i{
 	display: inline-block;
@@ -416,7 +468,7 @@ body,html{
 	width: 28px;
 	height: 24px;
 	border: 1px solid #ccc;
-	text-indent: 3px;
+	text-align: center;
 	margin: 0 3px;
 }
 .collect-del{
@@ -426,29 +478,27 @@ body,html{
 	padding-top: 8px;
 	line-height: 20px;
 }
-.store-all-alc{
-	height: 44px;
-	line-height: 44px;
-	border: 1px solid #ddd;
-	border-left: 0;
-	color: #333;
-}
 .store-all-alc span{
 	margin:auto 20px auto 55px;
 	color: #666;
 }
 .allgoods-money{
-	height: 55px;
+	height: 56px;
 	line-height: 55px;
 	background-color: #f9f9f9;
+	border-right: 1px solid #ddd;
 }
 .allgoods-money p{
 	margin-right: 20px;
 	font-size: 14px;
 }
 .allgoods-money span{
-	font-size: 18px;
+	font-size: 26px;
 	color: #d93600;
+}
+.next-foot-box{
+	height: 71px;
+	position: relative;
 }
 .next-foot{
 	width: 216px;
@@ -458,7 +508,9 @@ body,html{
 	background-color: #49afcd;
 	color: #fff;
 	text-align: left;
-	margin-top: 35px;
+	position: absolute;
+	top: 35px;
+	right: 0;
 }
 .next-foot i{
 	display: inline-block;
@@ -531,6 +583,11 @@ body,html{
 	color: #fff;
 	font-size: 16px;
 	border-radius: 3px;
+	opacity: 0.8;
+}
+.add-to-cart:hover{
+	background-color: #d93600;
+	opacity: 1;
 }
 .add-to-cart i{
 	display: inline-block;
@@ -547,7 +604,7 @@ body,html{
 #cart-footer{
 	margin-top: 20px;
 }
-/*-----------------------detail--------------------*/
+/*--------------------detail-----------------------*/
 #d-middle{
 	overflow: hidden;
 }
@@ -581,45 +638,316 @@ body,html{
 .d-right-info{
 	width: 790px;
 }
+.d-f{
+	font-size: 14px;
+	color: #D93600;
+}
 .d-detail-info{
+	overflow: hidden;
 	width: 100%;
 	border-top: 1px dashed #ccc;
 	margin-top: 10px;
 }
 .detail-info-l{
 	width: 560px;
-	height: 125px;
 	line-height: 30px;
-	border-bottom: 1px solid #eee;
 	color: #666;
 }
-.detail-info-l del{
-	font-weight: bold;
+.info-l-top{
+	overflow: hidden;
+	width: 560px;
+	height: 125px;
+	border-bottom: 1px solid #eee;
 }
-.d-price{
+.detail-info-l .info span{
+	width: 80px;
+	text-align: right;
+	display: inline-block;
+}
+.info02 strong{
 	color: #d93600;
 	font-size: 16px;
 }
-.d-det{
-	display: inline-block;
-	width: 64px;
-	height: 30px;
-	text-align: right;
-}
-.d-comment{
-	color: #005aa0;
-}
-.d-star{
+.info03 i{
 	display: inline-block;
 	width: 80px;
 	height: 15px;
+	margin-right: 27px;
+	background: url(../img/bg/sprite02.png) no-repeat -392px 0;
+}
+.info03 em{
+	font-style: normal;
+	color: #005aa0;
+}
+.info-l-mid{
+	overflow: hidden;
+	width: 100%;
+}
+.d-mid{
+	width: 100%;
 	overflow: hidden;
 }
-.d-star li{
-	width: 16px;
-	height: 15px;
-	background: url("../img/bg/sprite02.png") no-repeat -358px 0;
+.mid01 span,.mid02 span{
+	display: inline-block;
+	width: 80px;
+	text-align: right;
 }
+.mid01 span{
+	margin-top: 5px;
+}
+.mid01-one{
+	width: 60px;
+	height: 30px;
+	overflow: hidden;
+	margin-top: 10px;
+}
+.mid01-one p{
+	width: 18px;
+	height: 30px;
+}
+.mid01-one i{
+	font-style: normal;
+	display: inline-block;
+	width: 16px;
+	height: 12px;
+	line-height: 12px;
+	text-align: center;
+	border: 1px solid #ddd;
+}
+.mid01-add{
+	position: relative;
+	top: -8px;
+	left: 2px;
+}
+.mid01-sub{
+	position: relative;
+	left: 2px;
+	top: -22px;
+}
+.mid01-txt{
+	width: 38px;
+	height: 28px;
+	border: 1px solid #ddd;
+	display: inline-block;
+}
+.mid02-span{
+	width: 241px;
+	height: 24px;
+	background-color: #e5383c;
+	color: #fff;
+	line-height: 24px;
+	text-align: center;
+	margin-top: 6px;
+}
+.mid02 i{
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin-top: 10px;
+	margin-left: 10px;
+	background: url(../img/bg/sprite02.png) no-repeat -375px 0;
+}
+.mid03-qi{
+	width: 60px;
+	height: 13px;
+	line-height: 13px;
+	margin-left: 20px;
+	text-align: center;
+	color: #fff;
+	margin-top: 6px;
+}
+.qi01{
+	width: 32px;
+	height: 13px;
+	background-color: #c40000;
+}
+.qi02{
+	width: 18px;
+	height: 13px;
+	background-color: #660000;
+}
+.mid03 span{
+	color: #00549d;
+}
+.mid04{
+	width: 390px;
+	height: 38px;
+	margin-top: 10px;
+	margin-bottom: 42px;
+}
+.mid04 a{
+	display: inline-block;
+	margin-right: 9px;
+}
+.mid04-btn1{
+	width: 106px;
+	height: 38px;
+	background: url(../img/bg/sprite02.png) no-repeat -384px -17px;
+}
+.mid04-btn2{
+	width: 144px;
+	height: 38px;
+	background: url(../img/bg/sprite02.png) no-repeat -490px 0;
+}
+.mid04-btn3{
+	width: 106px;
+	height: 38px;
+	background: url(../img/bg/sprite02.png) no-repeat -384px -57px;
+}
+.mid05{
+	width: 162px;
+	height: 36px;
+	line-height: 36px;
+	color: #9999a5;
+	background: url(../img/bg/sprite02.png) no-repeat -410px -98px;
+}
+.mid05 a{
+	display: inline-block;
+	margin-left: 29px;
+	color: #005ea6;
+}
+.mid06{
+	height: 24px;
+	margin-top: 3px;
+}
+.mid06 a{
+	width: 24px;
+	height: 24px;
+	display: inline-block;
+	margin-right: 4px;
+}
+.mid06-pic1{
+	background: url(../img/bg/jiathis_ico_24x24.png) no-repeat 0 -143px;
+}
+.mid06-pic2{
+	background: url(../img/bg/jiathis_ico_24x24.png) no-repeat 0 -215px;
+}
+.mid06-pic3{
+	background: url(../img/bg/jiathis_ico_24x24.png) no-repeat 0 -24px;
+}
+.mid06-pic4{
+	background: url(../img/bg/jiathis_ico_24x24.png) no-repeat 0 -3023px;
+}
+.mid06-pic5{
+	background: url(../img/bg/jiathis_ico_24x24.png) no-repeat 0 -2711px;
+}
+.mid06-pic6{
+	background: url(../img/bg/jiathis_ico_24x24.png) no-repeat 0 -240px;
+}
+.mid06-pic7{
+	background: url(../img/bg/jiathis_ico_24x24.png) no-repeat 0 -839px;
+}
+/*----------detail-info-r--------*/
+.detail-info-r{
+	width: 208px;
+	height: 306px;
+	border: 1px solid #ddd;
+	margin-top: 13px;
+}
+.detail-info-r h3{
+	height: 30px;
+	border-bottom: 1px solid #ddd;
+	line-height: 30px;
+	text-indent: 10px;
+	background-color: #f5f5f5;
+}
+.info-box1{
+	height: 33px;
+	line-height: 33px;
+	border-bottom: 1px solid #ddd;
+}
+.d-pointer{
+	display: inline-block;
+	width: 79px;
+	height: 15px;
+	background: url(../img/bg/2017grate.png) no-repeat 0 0;
+	margin: 5px 5px auto auto;
+}
+.d-pointer-span{
+	color: #da542e;
+}
+.info-box2{
+	width: 192px;
+	height: 106px;
+	margin: 0 8px;
+	border-bottom: 1px dashed #ddd;
+}
+.info-box2 li{
+	width: 100%;
+	height: 26px;
+	line-height: 26px;
+	text-indent: 6px;
+}
+.info-box2-li1{
+	height: 28px;
+	line-height: 28px;
+}
+.info-box2-li1 strong{
+	margin-right: 30px;
+}
+.box2-l span{
+	color: #999;
+}
+.box2-r{
+	color: #da542e;
+	margin-left: 5px;
+}
+.box2-r span{
+	display: inline-block;
+	width: 40px;
+	height: 19px;
+	line-height: 19px;
+	text-align: center;
+	background-color: #da542e;
+	color: #fff;
+}
+.box2-r i{
+	display: inline-block;
+	width: 9px;
+	height: 8px;
+	background: url(../img/bg/2017grate.png) no-repeat 0 -40px;
+}
+.info-box3{
+	width: 100%;
+	height: 33px;
+	line-height: 33px;
+	border-bottom: 1px solid #ddd;
+}
+.info-box4{
+	width: 100%;
+	height: 58px;
+	border-bottom: 1px solid #ddd;
+	line-height: 58px;
+}
+.info-box5{
+	width: 100%;
+	height: 41px;
+	line-height: 41px;
+}
+.info-box3{
+	text-indent: 9px;
+}
+.info-box3 .info-box3-pic{
+	margin-top: 7px;
+	margin-right: 4px;
+}
+.info-box4{
+	overflow: hidden;
+}
+.info-box4 p{
+	height: 25px;
+	line-height: 29px;
+	text-indent: 9px;
+}
+.info-box5{
+	color: #999;
+}
+.info-box5 span{
+	margin-left: 20px;
+	text-indent: 9px;
+	color: #005ea6;
+}
+/*----------d-mid-pics------------*/
 #d-mid-pics{
 	height: 145px;
 	border: 1px solid #eee;
@@ -635,10 +963,9 @@ body,html{
 	margin-left: 25px;
 	margin-top: 23px;
 }
-#d-mid-pics .pic{
+#d-mid-pics .pic img{
 	width: 100px;
 	height: 100px;
-	background-color: aliceblue;
 }
 #d-mid-pics dd{
 	width: 150px;
@@ -665,12 +992,14 @@ body,html{
 	border: 1px solid #ddd;
 	background-color: #f1f1f1;
 }
+/*------------d-content---------------*/
 .d-content{
 	overflow: hidden;
 }
 .d-content-l{
 	width: 208px;
 	height: auto;
+	clear: both;
 }
 .d-code{
 	width: 208px;
@@ -855,7 +1184,13 @@ body,html{
 }
 .r-list{
 	width: 980px;
+	height: 50px;
 	overflow: hidden;
+}
+.r-list-fixed{
+	position: fixed;
+	top: 0;
+	right: 26px;
 }
 .r-lists{
 	width: 242px;
@@ -863,6 +1198,9 @@ body,html{
 	line-height: 50px;
 	text-align: center;
 	background-color: #f5f5f5;
+	border-bottom: 1px solid #ddd;
+	font-size: 14px;
+	letter-spacing: 1px;
 }
 .r-lists dt{
 	width: 242px;
@@ -875,7 +1213,8 @@ body,html{
 	height: 50px;
 	line-height: 50px;
 	text-indent: 18px;
-	background-color: aliceblue;
+	border: 1px solid #ddd;
+	border-top: 0;
 }
 .d-codes span{
 	margin-left: 190px;
@@ -884,7 +1223,21 @@ body,html{
 	width: 980px;
 	height: auto;
 }
+.d-tab{
+	margin-top: 15px;
+}
 .d-tab2{
+	text-indent: 20px;
+}
+.d-p{
+	height: 32px;
+	line-height: 32px;
+}
+.d-span{
+	height: 35px;
+	line-height: 35px;
+}
+.d-c{
 	height: 32px;
 	line-height: 32px;
 	text-indent: 20px;
@@ -893,37 +1246,37 @@ body,html{
 .d-products{
 	overflow: hidden;
 }
-.d-products ul{
+.d-pro{
 	padding: 10px 0 5px 0;
 	overflow: hidden;
 	margin-left: -5px;
 }
-.d-products li{
+.d-pro li{
 	vertical-align: top;
 	width: 19%;
 	height: 210px;
 	padding: 10px 0 5px 0;
 	border-left: dotted 1px #E6E6E6;
 }
-.d-products dl{
+.d-pro dl{
 	text-align: center;
 	width: 100%;
 	margin: 0px auto;
 	position: relative;
 	z-index: 1;
 }
-.d-products dt img{
+.d-pro dt img{
 	width: 120px;
 	height: 120px;
 	margin: 10px 50px;
 }
-.d-products span{
+.d-pro span{
 	color: #D93600;
 }
-.d-products a{
+.d-pro a{
 	color: #00549d;
 }
-.d-products a:hover{
+.d-pro a:hover{
 	color: red;
 	text-decoration: underline;
 }
@@ -931,6 +1284,7 @@ body,html{
 	height: 98px;
 	width: 980px;
 	border: 1px solid #ddd;
+	border-top: 0;
 }
 .d-percent{
 	overflow: hidden;
@@ -1002,9 +1356,48 @@ body,html{
 	line-height: 50px;
 	background-color: #f5f5f5;
 }
+.tabs-div i{
+	display: inline-block;
+	width: 16px;
+	height: 13px;
+	background: url(../img/bg/sprite02.png) no-repeat -362px -80px;
+	margin-top: 8px;
+	margin-right: 3px;
+}
 .tab3-box p{
 	width: 100%;
 	text-align: center;
 	margin-top: 65px;
 	color: #959595;
+}
+.d-tab4-data{
+	height: 98px;
+	line-height: 98px;
+	width: 100%;
+	border: 1px solid #ddd;
+	text-align: center;
+	color: #999;
+	border-top: 0;
+}
+.sametab{
+	display: none;
+}
+.d-tab1{
+	margin-bottom: 20px;
+	padding: 1px;
+	border: 1px solid #ddd;
+	border-top: 0;
+	display: block;
+}
+#d-header{
+	overflow: hidden;
+}
+#-middle{
+	overflow: hidden;
+}
+#d-mid-pics{
+	overflow: hidden;
+}
+#d-content{
+	overflow: hidden;
 }

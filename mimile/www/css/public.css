@@ -14,6 +14,9 @@ img{
 ul,ol{
 	list-style: none;
 }
+.cl{
+	clear: both;
+}
 
 /*----------------------定义超链接-----------------------*/
 a{
@@ -294,17 +297,19 @@ body,html{
 	font-size: 14px;
 }
 .h3-coinl{
-	margin-top: 17px;
+	display: inline-block;
 	margin-left: 20px;
 	width: 30px;
 	height: 10px;
 	background: url(../img/bg/sprite.png) no-repeat -61px -160px;
 }
 .h3-coinr{
+	position: relative;
+	top: 3px;
+	left: 46px;
+	display: inline-block;
 	width: 10px;
 	height: 10px;
-	margin-top: 20px;
-	margin-right: 14px;
 	background: url(../img/bg/sprite.png) no-repeat -57px -172px;
 }
 .navlist li{
@@ -390,9 +395,28 @@ body,html{
 	border-right: 1px solid #ccc;
 	background-color: #fff;
 	position: absolute;
-	top: 0;
 	left: 210px;
-	/* display: none; */
+	display: none;
+	z-index: 99;
+}
+.phone-one{
+	top: 0px;
+}
+.phone-five:hover{
+	display: block;
+}
+.phone-two{
+	top: 52px;
+}
+.phone-three{
+	top: 104px;
+}
+.phone-four{
+	top: 156px;
+}
+.lunbo-content .phone-five{
+	bottom: 0;
+	display: block;
 }
 .phone h3{
 	width: 760px;
