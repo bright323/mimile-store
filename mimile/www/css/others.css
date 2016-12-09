@@ -236,16 +236,25 @@ body,html{
 	position: relative;
 }
 .experice-code{
-	margin: 8px 10px auto 20px;
+	margin: 4px 10px auto 20px;
 	display: inline-block;
 	width: 90px;
-	height: 26px;
-	background: url(../img/bg/login-register.png) no-repeat -309px -100px;
+	height: 34px;
+	font-size: 24px;
+	line-height: 34px;
+	text-align: center;
+	background: url(../img/bg/random.png) no-repeat;
 }
 .code-blur{
 	font-size: 16px;
 	color: #00549d;
+	cursor: pointer;
+	opacity: 0.8;
 }
+.code-blur:hover{
+	opacity: 1;
+}
+
 .require-code{
 	width: 146px;
 	border: 1px solid #e6e6e6;
@@ -625,15 +634,99 @@ body,html{
 	font-family: "宋体";
 }
 .d-left-pic{
-	width: 360px;
 	height: 560px;
 	padding-left: 10px;
 	margin-right: 40px;
+	position: relative;
 }
-.d-left-pic .pic{
+#lpic{
+	width: 240px;
+	height: 240px;
+	border: 1px solid orange;
+	position: relative;
+	top: 60px;
+	left: 60px;
+}
+#lpic img{
+	width: 240px;
+	height: 240px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#rpic{
 	width: 360px;
 	height: 360px;
-	background-color: aliceblue;
+	border: 1px solid orange;
+	position: absolute;
+	left: 360px;
+	top: 60px;
+	display: none;
+	z-index: 999;
+	overflow: hidden;
+}
+#rpic img{
+	width: 500px;
+	height: 500px;
+	position: absolute;
+}
+#box{
+	width: 257px;
+	height: 68px;
+	overflow: hidden;
+	position: absolute;
+	bottom: 80px;
+	left: 50px;
+}
+#box ul{
+	width: 330px;
+	height: 62px;
+	position: absolute;
+}
+#bpic img{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+}
+#bpic li{
+	width: 60px;
+	height: 60px;
+	margin: 1px;
+	border: 1px solid green;
+}
+#bpic li:hover{
+	border: 2px solid orange;
+	border-radius: 5px;
+}
+.lb-coin{
+	width: 30px;
+	text-align: center;
+	height: 68px;
+	line-height: 68px;
+	font-size: 36px;
+	color: #ddd;
+	cursor: pointer;
+}
+.lbackground{
+	position: absolute;
+	bottom: 80px;
+	left: 15px;
+}
+.rbackground{
+	position: absolute;
+	bottom: 80px;
+	left: 313px;
+}
+#fd{
+	width: 120px;
+	height: 120px;
+	background-color: orange;
+	opacity: 0.3;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 88;
 }
 .d-right-info{
 	width: 790px;

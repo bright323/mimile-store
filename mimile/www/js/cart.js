@@ -1,7 +1,7 @@
 $(function(){
 	$("#header").load("public-html/topnav.html");
 	$("#cart-footer").load("public-html/footer02.html");
-
+    $(".blank-cart").show();
 	if(getCookie('cartsid')==''){
 		$(".add-cart").css("display","none");
 		$(".next-foot-box").css("display","none");
@@ -23,7 +23,7 @@ $.ajax({
             $('.g-details').eq(i).html(data.piclist[i].title);
             $('.cart-content dd p').eq(i).html(data.piclist[i].price);
         }
-        if (getCookie('cartsid')) { //遍历已经存在的cookie
+        if (getCookie('cartsid')) {
             var s = getCookie('cartsid').split(',');
             var n = getCookie('cartnum').split(',');
             for (var i = 0; i < s.length; i++) {
@@ -35,12 +35,12 @@ $.ajax({
 
 
 function cookiearr() { 
-    if (getCookie('cartsid')) { //cartindex 存放cookie的索引名称
+    if (getCookie('cartsid')) {
         sidarr = getCookie('cartsid').split(',');
     } else {
         sidarr = [];
     }
-    if (getCookie('cartnum')) { //cartnum   存放数量的cookie名称
+    if (getCookie('cartnum')) {
         numarr = getCookie('cartnum').split(',');
     } else {
         numarr = []
@@ -52,7 +52,7 @@ var numarr = [];
 $('.add-to-cart').on('click', function() {
     cookiearr();
     var sid = $(this).parents('dl').find('dt').find('img').attr('sid');
-    if ($.inArray(sid, sidarr) != -1) { //加数量累加
+    if ($.inArray(sid, sidarr) != -1) {
         $('.cart-goods-box:visible').each(function() {
             if (sid == $(this).find('.cart-goods-img').find('img').attr('sid')) {
                 var $value = $(this).find('.cart-goods-value').val();
@@ -64,7 +64,7 @@ $('.add-to-cart').on('click', function() {
                 addCookie('cartnum', numarr.toString(), 7);
             }
         });
-    } else { //添加id，商品的标识
+    } else {
         sidarr.push(sid);
         addCookie('cartsid', sidarr.toString(), 7);
         numarr.push(1);
@@ -98,24 +98,23 @@ function createcart(sid, num) {
                     var singleprice = parseFloat($clone.find('.cart-goods-money').html());
                     var count = parseInt($clone.find('.cart-goods-value').val());
                     $clone.find('.cart-goods-alc').html((singleprice * count).toFixed(2));
-                    $clone.css('display', 'block'); //克隆的是隐藏的
+                    $clone.css('display', 'block');
                     $('.addgoods').append($clone);
-                    $('.addgoods').addClass('cl')
-                    //totalprice()
+                    $('.addgoods').addClass('cl');
                 }
             }
         }
     })
 }
 
-function deletegood(sid1, array) { //删除数组里面对应的元素。
+function deletegood(sid1, array) {
     var arr = [];
     for (var i = 0; i < array.length; i++) {
         if (sid1 != array[i]) {
             arr.push(array[i]);
         }
     }
-    numarr.splice(sidarr.indexOf(sid1), 1); //对应位置
+    numarr.splice(sidarr.indexOf(sid1), 1);
     sidarr = arr;
     addCookie('cartsid', sidarr.toString(), 7);
     addCookie('cartnum', numarr.toString(), 7);
@@ -143,7 +142,7 @@ $('.cart-del').on('click', function() {
 $('.add-to-cart').on('click', function() {
     cookiearr();
     $('.cart-goods-box:visible').each(function() {
-        if ($(this).find('input:checkbox').is(':checked')) { //选中所有的checkbox，如果里面包含checked
+        if ($(this).find('input:checkbox').is(':checked')) {
             $(this).remove();
             deletegood($(this).find('img').attr('sid'), numarr);
         }
@@ -185,13 +184,12 @@ $input.on('click',function(){
 
 //改变购买数量
 //计算小计
-function smalltotal(row){//参数：哪一个商品的小计
+function smalltotal(row){
     var $dprice=parseFloat(row.parents('.cart-goods-box').find('.cart-goods-money').html());
     var $dnum=parseInt(row.parents('.cart-goods-box').find('.cart-goods-value').val());
     return ($dprice*$dnum).toFixed(2);
 }
 
-//添加购买数量
 $('.cart-goods-value').next().on('click',function(){
     var $buynum=parseInt($(this).prev('input').val());
     $buynum++;

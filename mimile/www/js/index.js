@@ -1,17 +1,31 @@
 	$(function(){
+
 		$(".topnav").load("html/public-html/topnav.html");
 		$(".top-bg-form").load("html/public-html/topnav-topbg.html");
-		$("#nav").load("html/public-html/nav.html");
-		$(".banner-left").load("html/public-html/list.html");
 		$("#footer").load("html/public-html/footer.html");
+        $('.lunbo-bg').show();
+        $(".category").css("margin-top","10px");
+        $(".public-nav").css("border-bottom","2px solid #D4121B");
+        $(".phone-five").css("top","287px");
+        $(".phone-one").css("top","10px");
+        if(getCookie('user1') && getCookie('pass1')){
+            $("#log").css("display","none");
+            $('#admin').css("display","block");
+            $('#admin span').html(getCookie('user1')+'，你好');
+        }
+        $('#admin a').on('click',function(){
+            $("#log").css("display","block");
+            $('#admin').css("display","none");
+        })
 	/*-----------------------二级菜单---------------------*/
-	// $(function(){
-	// 	$(".cgli").hover(function(){
-	// 		//console.log(1);
-	// 		var $index = $(this).index();
-	// 		$(".category").siblings('div').eq("$index").css("display","block").siblings('div').css("display","none");
-	// 	})
-	// })
+
+		$(".cgli").hover(function(){
+			var $index = $(this).index();
+            $(this).parents('.lunbo-content').find('.phone').eq($index).show().siblings('.phone').hide();
+		},function(){
+            $(".phone").hide();
+        })
+	
         /*----------------手风琴-----------------*/ 
         $(".mouth-li").hover(function(){
             $(".mouth-goods").find('dl').eq($(this).index()).stop().slideDown().parents('li').siblings().find('dl').stop().slideUp();
@@ -19,20 +33,20 @@
         /*-------------上下方向的轮播------------*/
         var num03 = 0;
         var picnum03 = 12;
-        var bstop03 = true;
+        var stop03 = true;
         $('.floor-right').click(function() {
-            if (bstop03) {
+            if (stop03) {
                 num03--;
                 tab3();
             }
-            bstop03 = false;
+            stop03 = false;
         });
         $('.floor-left').click(function() {
-            if (bstop03) {
+            if (stop03) {
                 num03++;
                 tab3();
             }
-            bstop03 = false;
+            stop03 = false;
         });
 
         function tab3() {
@@ -47,7 +61,7 @@
                     $('.goods-g-lunbo').css('top', -50 * picnum03 + 'px');
                     num03 = 11;
                 }
-                bstop03 = true;
+                stop03 = true;
             })
         }
 
@@ -163,7 +177,7 @@
         }, function() {
             timer = setInterval(function() {
                 $('.goods-g-leftbox').click();
-            }, 2600)
+            }, 1500)
         })
 
     });
@@ -217,10 +231,10 @@
                 }
             }
 
-            var bstop03 = true;
+            var stop03 = true;
             var $top_small = $(".sale-small-pic").offset().top + 60;
             if ($top_small < $scrolltop + $height) {
-                if (bstop03) {
+                if (stop03) {
                     $.ajax({
                         url: 'json/index.json',
                         async:false,
@@ -233,7 +247,7 @@
                             str03 = '<a href="javascript:;"><img src="'+data.pic_three[i]+'"/></a>';
                             $('.sale-small-pic li').eq(i).html(str03);
                         }
-                        bstop03=false;
+                        stop03=false;
 
                     })
                 }
@@ -303,6 +317,29 @@
                     })
                 }  
             }
+
+            var bstop07 = true;
+            var $top_d = $(".recom-sto li").offset().top + 195;
+            if ($top_d < $scrolltop + $height) {
+                if (bstop07) {
+                    $.ajax({
+                        url: 'json/index.json',
+                        async:false,
+                        beforeSend: function() {//发送请求前
+                            $('.recom-sto li').html('<img src="img/bg/loading.gif" class="loading06 loading">');
+                        }
+                    }).done(function(data) {
+                        var str07 = '';
+                        for (var i = 0; i < data.bigPic.length; i++) {
+                            str07 = '<a href="html/detail.html"><img src="'+data.bigPic[i]+'"/></a>';
+                            $('.recom-sto li').eq(i).html(str07);
+                        }
+                        bstop07=false;
+                    })
+                }  
+            }
+
+
         });
         
     /*---------------------右侧边栏-------------------*/
